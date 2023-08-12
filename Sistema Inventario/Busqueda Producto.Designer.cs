@@ -60,7 +60,7 @@ namespace Sistema_Inventario
             this.PTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.PTitulo.Location = new System.Drawing.Point(0, 0);
             this.PTitulo.Name = "PTitulo";
-            this.PTitulo.Size = new System.Drawing.Size(1077, 100);
+            this.PTitulo.Size = new System.Drawing.Size(1459, 100);
             this.PTitulo.TabIndex = 0;
             // 
             // LTitulo
@@ -85,7 +85,7 @@ namespace Sistema_Inventario
             this.PInformacion.Dock = System.Windows.Forms.DockStyle.Top;
             this.PInformacion.Location = new System.Drawing.Point(0, 100);
             this.PInformacion.Name = "PInformacion";
-            this.PInformacion.Size = new System.Drawing.Size(1077, 100);
+            this.PInformacion.Size = new System.Drawing.Size(1459, 100);
             this.PInformacion.TabIndex = 1;
             // 
             // button2
@@ -153,7 +153,7 @@ namespace Sistema_Inventario
             this.PBotones.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.PBotones.Location = new System.Drawing.Point(0, 516);
             this.PBotones.Name = "PBotones";
-            this.PBotones.Size = new System.Drawing.Size(1077, 100);
+            this.PBotones.Size = new System.Drawing.Size(1459, 100);
             this.PBotones.TabIndex = 1;
             // 
             // BAceptar
@@ -316,7 +316,7 @@ namespace Sistema_Inventario
             this.DGVDatos.Location = new System.Drawing.Point(0, 200);
             this.DGVDatos.Name = "DGVDatos";
             this.DGVDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGVDatos.Size = new System.Drawing.Size(1077, 316);
+            this.DGVDatos.Size = new System.Drawing.Size(1459, 316);
             this.DGVDatos.TabIndex = 2;
             this.DGVDatos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVDatos_CellDoubleClick);
             this.DGVDatos.CurrentCellChanged += new System.EventHandler(this.DGVDatos_CurrentCellChanged);
@@ -326,7 +326,7 @@ namespace Sistema_Inventario
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1077, 616);
+            this.ClientSize = new System.Drawing.Size(1459, 616);
             this.Controls.Add(this.DGVDatos);
             this.Controls.Add(this.PInformacion);
             this.Controls.Add(this.PBotones);

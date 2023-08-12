@@ -518,6 +518,7 @@
         </TablixRowHierarchy>
         <DataSetName>Movimiento_Inventario</DataSetName>
         <Top>0.03528cm</Top>
+        <Left>1.5875cm</Left>
         <Height>5.04472cm</Height>
         <Width>30.03021cm</Width>
         <Style>
@@ -530,7 +531,7 @@
     <Height>2in</Height>
     <Style />
   </Body>
-  <Width>11.82292in</Width>
+  <Width>13.04167in</Width>
   <Page>
     <PageHeader>
       <Height>2.95203cm</Height>
@@ -644,8 +645,38 @@
           <Top>1.11938cm</Top>
           <Left>18.8087cm</Left>
           <Height>0.6cm</Height>
-          <Width>2.5cm</Width>
+          <Width>4.48438cm</Width>
           <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox5">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Globals!PageNumber</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox3</rd:DefaultName>
+          <Top>1.11938cm</Top>
+          <Left>23.63407cm</Left>
+          <Height>0.6cm</Height>
+          <Width>4.0875cm</Width>
+          <ZIndex>2</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>

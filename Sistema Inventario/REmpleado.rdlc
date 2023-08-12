@@ -724,8 +724,8 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>Empleado</DataSetName>
-        <Top>0.07056cm</Top>
-        <Left>0.00211cm</Left>
+        <Top>0.03528cm</Top>
+        <Left>0.68166cm</Left>
         <Height>4.97416cm</Height>
         <Width>34.8268cm</Width>
         <Style>
@@ -738,7 +738,7 @@
     <Height>2in</Height>
     <Style />
   </Body>
-  <Width>13.71217in</Width>
+  <Width>14.19134in</Width>
   <Page>
     <PageHeader>
       <Height>2.63453cm</Height>
@@ -854,8 +854,38 @@
           <Top>0.7225cm</Top>
           <Left>21.53265cm</Left>
           <Height>0.6cm</Height>
-          <Width>5.38396cm</Width>
+          <Width>4.37854cm</Width>
           <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox5">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Globals!PageNumber</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox3</rd:DefaultName>
+          <Top>0.7225cm</Top>
+          <Left>26.35091cm</Left>
+          <Height>0.6cm</Height>
+          <Width>3.77cm</Width>
+          <ZIndex>2</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>

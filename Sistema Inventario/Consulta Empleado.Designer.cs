@@ -47,6 +47,7 @@ namespace Sistema_Inventario
             this.BPrimero = new System.Windows.Forms.Button();
             this.DGVDatos = new System.Windows.Forms.DataGridView();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.LCantMov = new System.Windows.Forms.Label();
             this.PTitulo.SuspendLayout();
             this.PInformacion.SuspendLayout();
             this.PBotones.SuspendLayout();
@@ -61,7 +62,7 @@ namespace Sistema_Inventario
             this.PTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.PTitulo.Location = new System.Drawing.Point(0, 0);
             this.PTitulo.Name = "PTitulo";
-            this.PTitulo.Size = new System.Drawing.Size(1077, 100);
+            this.PTitulo.Size = new System.Drawing.Size(1455, 100);
             this.PTitulo.TabIndex = 0;
             // 
             // LTitulo
@@ -86,7 +87,7 @@ namespace Sistema_Inventario
             this.PInformacion.Dock = System.Windows.Forms.DockStyle.Top;
             this.PInformacion.Location = new System.Drawing.Point(0, 100);
             this.PInformacion.Name = "PInformacion";
-            this.PInformacion.Size = new System.Drawing.Size(1077, 100);
+            this.PInformacion.Size = new System.Drawing.Size(1455, 100);
             this.PInformacion.TabIndex = 1;
             // 
             // button2
@@ -145,6 +146,7 @@ namespace Sistema_Inventario
             // 
             this.PBotones.BackColor = System.Drawing.Color.SteelBlue;
             this.PBotones.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.PBotones.Controls.Add(this.LCantMov);
             this.PBotones.Controls.Add(this.LCantidad);
             this.PBotones.Controls.Add(this.BSalir);
             this.PBotones.Controls.Add(this.BImprimir);
@@ -155,7 +157,7 @@ namespace Sistema_Inventario
             this.PBotones.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.PBotones.Location = new System.Drawing.Point(0, 464);
             this.PBotones.Name = "PBotones";
-            this.PBotones.Size = new System.Drawing.Size(1077, 152);
+            this.PBotones.Size = new System.Drawing.Size(1455, 152);
             this.PBotones.TabIndex = 1;
             // 
             // LCantidad
@@ -164,9 +166,9 @@ namespace Sistema_Inventario
             this.LCantidad.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LCantidad.Location = new System.Drawing.Point(355, 5);
             this.LCantidad.Name = "LCantidad";
-            this.LCantidad.Size = new System.Drawing.Size(422, 40);
+            this.LCantidad.Size = new System.Drawing.Size(386, 40);
             this.LCantidad.TabIndex = 3;
-            this.LCantidad.Text = "Cantidad de empleados:   0";
+            this.LCantidad.Text = "Cantidad de empleados: ";
             // 
             // BSalir
             // 
@@ -328,16 +330,25 @@ namespace Sistema_Inventario
             this.DGVDatos.Location = new System.Drawing.Point(0, 200);
             this.DGVDatos.Name = "DGVDatos";
             this.DGVDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGVDatos.Size = new System.Drawing.Size(1077, 264);
+            this.DGVDatos.Size = new System.Drawing.Size(1455, 264);
             this.DGVDatos.TabIndex = 2;
             this.DGVDatos.CurrentCellChanged += new System.EventHandler(this.DataGridViewDatos_CurrentCellChanged);
+            // 
+            // LCantMov
+            // 
+            this.LCantMov.AutoSize = true;
+            this.LCantMov.Location = new System.Drawing.Point(734, 21);
+            this.LCantMov.Name = "LCantMov";
+            this.LCantMov.Size = new System.Drawing.Size(20, 21);
+            this.LCantMov.TabIndex = 13;
+            this.LCantMov.Text = "0";
             // 
             // Consulta_Empleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1077, 616);
+            this.ClientSize = new System.Drawing.Size(1455, 616);
             this.Controls.Add(this.DGVDatos);
             this.Controls.Add(this.PInformacion);
             this.Controls.Add(this.PBotones);
@@ -380,5 +391,6 @@ namespace Sistema_Inventario
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label LCantidad;
+        private System.Windows.Forms.Label LCantMov;
     }
 }

@@ -132,27 +132,29 @@ namespace Sistema_Inventario
 
         private void MostrarDatos()
         {
-            string valorparametro = Tbuscar.Text.Trim();
             CNCategoria objcategoria = new CNCategoria();
 
-            //Aquí es donde se llama al método EmpleadoConsultarTodos de la clase CDEmpleado
             DataTable dt = objcategoria.CategoriaConsultarTodos();
 
-            if (dt != null && dt.Rows.Count > 0)
+            if (objcategoria.CategoriaConsultarTodos() != null)
             {
-                DGVDatos.DataSource = dt;
+                DGVDatos.DataSource = objcategoria.CategoriaConsultarTodos();
                 DGVDatos.Columns[0].Width = 25;
                 DGVDatos.Columns[1].Width = 25;
                 DGVDatos.Columns[2].Width = 200;
 
-
             }
-            else
+            else //Si el valor de vtieneparametro es 1 se ejecuta el método que filtra datos según el parámetro
             {
-                //MessageBox.Show("No se encontraron categorias.");
-
+                MessageBox.Show("No se retornó ningún valor!");
             }
-        }
+            DGVDatos.Refresh(); //Se refresca el DataGridView
+            LCantMov.Text = Convert.ToString(DGVDatos.RowCount); //Se muestra la cantidad de datos
+            if (DGVDatos.RowCount <= 0) //Si no se obtienen datos de retorno
+            {
+                MessageBox.Show("Ningún dato que mostrar!"); //Se muestra un mensaje de error
+            }
+        } //Fin del método mostrar
 
 
 
@@ -161,6 +163,8 @@ namespace Sistema_Inventario
             CNCategoria objcategoria = new CNCategoria();
 
             DataTable dt = objcategoria.CategoriaConsultar(valorparametro);
+
+         
 
             if (dt != null && dt.Rows.Count > 0)
             {
@@ -173,17 +177,14 @@ namespace Sistema_Inventario
             {
                 //MessageBox.Show("No se encontraron categorias.");
             }
+            // DGVDatos.Refresh(); //Se refresca el DataGridView
+            ////  LCantMov.Text = Convert.ToString(DGVDatos.RowCount); //Se muestra la cantidad de datos
+            //  if (DGVDatos.RowCount <= 0) //Si no se obtienen datos de retorno
+            //  {
+            //      MessageBox.Show("Ningún dato que mostrar!"); //Se muestra un mensaje de error
+            //  }
+        } //Fin del método mostrar
+    
 
-            // Mensajes de depuración
-            if (dt == null)
-            {
-                //   MessageBox.Show("El DataTable es nulo.");
-            }
-            else
-            {
-                //   MessageBox.Show("Se encontraron " + dt.Rows.Count + " categorías.");
-            }
-        }
-
-    }
+}
 }

@@ -186,7 +186,7 @@ namespace Sistema_Inventario
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(9, 64);
+            this.label3.Location = new System.Drawing.Point(9, 81);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(231, 31);
             this.label3.TabIndex = 3;
@@ -196,7 +196,7 @@ namespace Sistema_Inventario
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(56, 369);
+            this.label4.Location = new System.Drawing.Point(56, 206);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(237, 31);
             this.label4.TabIndex = 4;
@@ -216,7 +216,7 @@ namespace Sistema_Inventario
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(56, 210);
+            this.label9.Location = new System.Drawing.Point(56, 447);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(127, 31);
             this.label9.TabIndex = 9;
@@ -259,7 +259,7 @@ namespace Sistema_Inventario
             this.BBuscar.ForeColor = System.Drawing.SystemColors.MenuText;
             this.BBuscar.Image = global::Sistema_Inventario.Properties.Resources.buscarboton;
             this.BBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BBuscar.Location = new System.Drawing.Point(304, 61);
+            this.BBuscar.Location = new System.Drawing.Point(304, 78);
             this.BBuscar.Name = "BBuscar";
             this.BBuscar.Size = new System.Drawing.Size(134, 43);
             this.BBuscar.TabIndex = 24;
@@ -286,7 +286,7 @@ namespace Sistema_Inventario
             "Gabriel",
             "Mariia",
             "Rosa"});
-            this.CCEmpleado.Location = new System.Drawing.Point(259, 207);
+            this.CCEmpleado.Location = new System.Drawing.Point(259, 444);
             this.CCEmpleado.Name = "CCEmpleado";
             this.CCEmpleado.Size = new System.Drawing.Size(251, 39);
             this.CCEmpleado.TabIndex = 23;
@@ -295,7 +295,7 @@ namespace Sistema_Inventario
             // 
             this.DFecha.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DFecha.Location = new System.Drawing.Point(259, 454);
+            this.DFecha.Location = new System.Drawing.Point(259, 363);
             this.DFecha.Name = "DFecha";
             this.DFecha.Size = new System.Drawing.Size(251, 39);
             this.DFecha.TabIndex = 25;
@@ -310,7 +310,7 @@ namespace Sistema_Inventario
             this.CTipodemovimiento.Items.AddRange(new object[] {
             "Entrada",
             "Salida"});
-            this.CTipodemovimiento.Location = new System.Drawing.Point(299, 361);
+            this.CTipodemovimiento.Location = new System.Drawing.Point(299, 198);
             this.CTipodemovimiento.Name = "CTipodemovimiento";
             this.CTipodemovimiento.Size = new System.Drawing.Size(211, 39);
             this.CTipodemovimiento.TabIndex = 26;
@@ -319,7 +319,7 @@ namespace Sistema_Inventario
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(56, 460);
+            this.label5.Location = new System.Drawing.Point(56, 369);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(82, 31);
             this.label5.TabIndex = 10;
@@ -328,7 +328,7 @@ namespace Sistema_Inventario
             // TCantidad
             // 
             this.TCantidad.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TCantidad.Location = new System.Drawing.Point(259, 288);
+            this.TCantidad.Location = new System.Drawing.Point(259, 283);
             this.TCantidad.Name = "TCantidad";
             this.TCantidad.Size = new System.Drawing.Size(251, 39);
             this.TCantidad.TabIndex = 29;
@@ -359,7 +359,7 @@ namespace Sistema_Inventario
             this.CCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CCategoria.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CCategoria.FormattingEnabled = true;
-            this.CCategoria.Location = new System.Drawing.Point(187, 182);
+            this.CCategoria.Location = new System.Drawing.Point(187, 186);
             this.CCategoria.Name = "CCategoria";
             this.CCategoria.Size = new System.Drawing.Size(251, 39);
             this.CCategoria.TabIndex = 31;
@@ -368,7 +368,7 @@ namespace Sistema_Inventario
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(6, 190);
+            this.label8.Location = new System.Drawing.Point(6, 194);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(128, 31);
             this.label8.TabIndex = 38;
@@ -405,7 +405,7 @@ namespace Sistema_Inventario
             // TNombre
             // 
             this.TNombre.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TNombre.Location = new System.Drawing.Point(187, 126);
+            this.TNombre.Location = new System.Drawing.Point(187, 133);
             this.TNombre.Name = "TNombre";
             this.TNombre.Size = new System.Drawing.Size(251, 39);
             this.TNombre.TabIndex = 31;
@@ -414,7 +414,7 @@ namespace Sistema_Inventario
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(9, 134);
+            this.label6.Location = new System.Drawing.Point(9, 141);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(102, 31);
             this.label6.TabIndex = 30;

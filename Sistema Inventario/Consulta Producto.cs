@@ -126,30 +126,35 @@ namespace Sistema_Inventario
 
         private void MostrarDatos()
         {
-
-            string valorparametro = Tbuscar.Text.Trim();
-            CNProducto CNProducto = new CNProducto();
-
-
-            DataTable dt = CNProducto.ProductoObtenerTodos();
-
-            if (dt != null && dt.Rows.Count > 0)
             {
-                DGVDatos.DataSource = dt;
-                DGVDatos.Columns[0].Width = 80;
-                DGVDatos.Columns[1].Width = 125;
-                DGVDatos.Columns[2].Width = 200;
-                DGVDatos.Columns[3].Width = 125;
-                DGVDatos.Columns[4].Width = 125;
-                DGVDatos.Columns[5].Width = 125;
-                DGVDatos.Columns[6].Width = 100;
-                DGVDatos.Columns[7].Width = 100;
-                DGVDatos.Columns[8].Width = 90;
+                string valorparametro = Tbuscar.Text.Trim();
+                CNProducto CNProducto = new CNProducto();
 
-            }
-            else
-            {
-                MessageBox.Show("No se encontraron empleados.");
+                // Aquí es donde se llama al método EmpleadoConsultarTodos de la clase CDEmpleado
+                DataTable dt = CNProducto.ProductoObtenerTodos();
+
+                if (CNProducto.ProductoObtenerTodos() != null)
+                {
+                    DGVDatos.DataSource = CNProducto.ProductoObtenerTodos();
+                    DGVDatos.Columns[0].Width = 80; //Id_Prod
+                    DGVDatos.Columns[1].Width = 200; //Nombre_Prod
+                    DGVDatos.Columns[2].Width = 200; //Marca_Prod
+                    DGVDatos.Columns[3].Width = 200; //Fecha_Cad
+                    DGVDatos.Columns[4].Width = 90; //Estado
+                    DGVDatos.Columns[5].Width = 90; //Existencia
+                    DGVDatos.Columns[6].Width = 90; //Id_Cat
+
+                }
+                else //Si el valor de vtieneparametro es 1 se ejecuta el método que filtra datos según el parámetro
+                {
+                    MessageBox.Show("No se retornó ningún valor!");
+                }
+                DGVDatos.Refresh(); //Se refresca el DataGridView
+                LCantMov.Text = Convert.ToString(DGVDatos.RowCount); //Se muestra la cantidad de datos
+                if (DGVDatos.RowCount <= 0) //Si no se obtienen datos de retorno
+                {
+                    MessageBox.Show("Ningún dato que mostrar!"); //Se muestra un mensaje de error
+                }
             }
         }
 
@@ -192,7 +197,6 @@ namespace Sistema_Inventario
                 // MessageBox.Show("No se encontraron empleados.");
             }
         }
-
 
     }
 }

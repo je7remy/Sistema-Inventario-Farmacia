@@ -587,6 +587,7 @@
         </TablixRowHierarchy>
         <DataSetName>Producto</DataSetName>
         <Top>0.03528cm</Top>
+        <Left>0.9525cm</Left>
         <Height>4.97416cm</Height>
         <Width>31.66496cm</Width>
         <Style>
@@ -599,7 +600,7 @@
     <Height>2in</Height>
     <Style />
   </Body>
-  <Width>12.49244in</Width>
+  <Width>13.33619in</Width>
   <Page>
     <PageHeader>
       <Height>2.79328cm</Height>
@@ -711,10 +712,40 @@
           </Paragraphs>
           <rd:DefaultName>Textbox4</rd:DefaultName>
           <Top>1.45203cm</Top>
-          <Left>20.88537cm</Left>
+          <Left>20.25037cm</Left>
+          <Height>0.6cm</Height>
+          <Width>5.41042cm</Width>
+          <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox6">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Globals!PageNumber</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox6</rd:DefaultName>
+          <Top>1.45203cm</Top>
+          <Left>26.1112cm</Left>
           <Height>0.6cm</Height>
           <Width>2.5cm</Width>
-          <ZIndex>1</ZIndex>
+          <ZIndex>2</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>

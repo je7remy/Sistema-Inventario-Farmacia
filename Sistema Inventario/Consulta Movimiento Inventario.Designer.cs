@@ -47,6 +47,7 @@ namespace Sistema_Inventario
             this.BPrimero = new System.Windows.Forms.Button();
             this.DataGridViewDatos = new System.Windows.Forms.DataGridView();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.LCantMov = new System.Windows.Forms.Label();
             this.PTitulo.SuspendLayout();
             this.PInformacion.SuspendLayout();
             this.PBotones.SuspendLayout();
@@ -145,6 +146,7 @@ namespace Sistema_Inventario
             // 
             this.PBotones.BackColor = System.Drawing.Color.SteelBlue;
             this.PBotones.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.PBotones.Controls.Add(this.LCantMov);
             this.PBotones.Controls.Add(this.LCantidad);
             this.PBotones.Controls.Add(this.BAceptar);
             this.PBotones.Controls.Add(this.BCancelar);
@@ -165,9 +167,9 @@ namespace Sistema_Inventario
             this.LCantidad.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LCantidad.Location = new System.Drawing.Point(221, 5);
             this.LCantidad.Name = "LCantidad";
-            this.LCantidad.Size = new System.Drawing.Size(612, 40);
+            this.LCantidad.Size = new System.Drawing.Size(576, 40);
             this.LCantidad.TabIndex = 3;
-            this.LCantidad.Text = "Cantidad de Movimiento Inventario:   0";
+            this.LCantidad.Text = "Cantidad de Movimiento Inventario: ";
             // 
             // BAceptar
             // 
@@ -328,6 +330,15 @@ namespace Sistema_Inventario
             this.DataGridViewDatos.Size = new System.Drawing.Size(1077, 264);
             this.DataGridViewDatos.TabIndex = 2;
             // 
+            // LCantMov
+            // 
+            this.LCantMov.AutoSize = true;
+            this.LCantMov.Location = new System.Drawing.Point(790, 21);
+            this.LCantMov.Name = "LCantMov";
+            this.LCantMov.Size = new System.Drawing.Size(20, 21);
+            this.LCantMov.TabIndex = 13;
+            this.LCantMov.Text = "0";
+            // 
             // Consulta_Movimiento_Inventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -374,5 +385,6 @@ namespace Sistema_Inventario
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label LCantidad;
+        private System.Windows.Forms.Label LCantMov;
     }
 }
