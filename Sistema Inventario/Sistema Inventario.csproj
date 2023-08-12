@@ -1,0 +1,558 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A7FEF777-75A1-482B-9301-084FD2027E58}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Sistema_Inventario</RootNamespace>
+    <AssemblyName>Sistema Inventario</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DBInventarioEmpleado.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBInventarioEmpleado.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DBInventarioMovimiento_Inventario.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBInventarioMovimiento_Inventario.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DBInventarioProducto.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBInventarioProducto.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FREmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FREmpleado.Designer.cs">
+      <DependentUpon>FREmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRMovimientoInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMovimientoInventario.Designer.cs">
+      <DependentUpon>FRMovimientoInventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRProducto.Designer.cs">
+      <DependentUpon>FRProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Guardar copia de seguridad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Guardar copia de seguridad.Designer.cs">
+      <DependentUpon>Guardar copia de seguridad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Copia de seguridad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Copia de seguridad.Designer.cs">
+      <DependentUpon>Copia de seguridad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bienvenida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bienvenida.Designer.cs">
+      <DependentUpon>Bienvenida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Acerca de.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Acerca de.Designer.cs">
+      <DependentUpon>Acerca de.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consulta Movimiento Inventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consulta Movimiento Inventario.Designer.cs">
+      <DependentUpon>Consulta Movimiento Inventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consulta Categoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consulta Categoria.Designer.cs">
+      <DependentUpon>Consulta Categoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consulta Producto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consulta Producto.Designer.cs">
+      <DependentUpon>Consulta Producto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consulta Empleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consulta Empleado.Designer.cs">
+      <DependentUpon>Consulta Empleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Busqueda Categoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Busqueda Categoria.Designer.cs">
+      <DependentUpon>Busqueda Categoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Busqueda Producto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Busqueda Producto.Designer.cs">
+      <DependentUpon>Busqueda Producto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Busqueda Empleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Busqueda Empleado.Designer.cs">
+      <DependentUpon>Busqueda Empleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Categoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Categoria.Designer.cs">
+      <DependentUpon>Categoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Movimiento Inventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimiento Inventario.Designer.cs">
+      <DependentUpon>Movimiento Inventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Producto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Producto.Designer.cs">
+      <DependentUpon>Producto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Empleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empleado.Designer.cs">
+      <DependentUpon>Empleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="FREmpleado.resx">
+      <DependentUpon>FREmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMovimientoInventario.resx">
+      <DependentUpon>FRMovimientoInventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRProducto.resx">
+      <DependentUpon>FRProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Guardar copia de seguridad.resx">
+      <DependentUpon>Guardar copia de seguridad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Copia de seguridad.resx">
+      <DependentUpon>Copia de seguridad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bienvenida.resx">
+      <DependentUpon>Bienvenida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Acerca de.resx">
+      <DependentUpon>Acerca de.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consulta Movimiento Inventario.resx">
+      <DependentUpon>Consulta Movimiento Inventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consulta Categoria.resx">
+      <DependentUpon>Consulta Categoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consulta Producto.resx">
+      <DependentUpon>Consulta Producto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consulta Empleado.resx">
+      <DependentUpon>Consulta Empleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Busqueda Categoria.resx">
+      <DependentUpon>Busqueda Categoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Busqueda Producto.resx">
+      <DependentUpon>Busqueda Producto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Busqueda Empleado.resx">
+      <DependentUpon>Busqueda Empleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Categoria.resx">
+      <DependentUpon>Categoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimiento Inventario.resx">
+      <DependentUpon>Movimiento Inventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Producto.resx">
+      <DependentUpon>Producto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empleado.resx">
+      <DependentUpon>Empleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="REmpleado.rdlc" />
+    <EmbeddedResource Include="RMovimientoInventario.rdlc" />
+    <EmbeddedResource Include="RProducto.rdlc" />
+    <None Include="DBInventarioEmpleado.xsc">
+      <DependentUpon>DBInventarioEmpleado.xsd</DependentUpon>
+    </None>
+    <None Include="DBInventarioEmpleado.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DBInventarioEmpleado.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DBInventarioEmpleado.xss">
+      <DependentUpon>DBInventarioEmpleado.xsd</DependentUpon>
+    </None>
+    <None Include="DBInventarioMovimiento_Inventario.xsc">
+      <DependentUpon>DBInventarioMovimiento_Inventario.xsd</DependentUpon>
+    </None>
+    <None Include="DBInventarioMovimiento_Inventario.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DBInventarioMovimiento_Inventario.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DBInventarioMovimiento_Inventario.xss">
+      <DependentUpon>DBInventarioMovimiento_Inventario.xsd</DependentUpon>
+    </None>
+    <None Include="DBInventarioProducto.xsc">
+      <DependentUpon>DBInventarioProducto.xsd</DependentUpon>
+    </None>
+    <None Include="DBInventarioProducto.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DBInventarioProducto.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DBInventarioProducto.xss">
+      <DependentUpon>DBInventarioProducto.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\R.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20210114_143239-1536x1152.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\empleado.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\producto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\categoria.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\movimiento inventario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\consultas y reportes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\consultas y reportes1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\consultas y reportes2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\consultas y reportes3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\consultas y reportes sub menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\salir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editor de texto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calculadora.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reproductor multimedia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navegador web.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\copia de seguridad del sistema.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\restaurar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cuenta de usuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\registrar empresa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\contenido.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\acerca de.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fondo menu principal 2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backgraond.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backgraond1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nuevo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nuevo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nuevo2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nuevo21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\guardar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nuevo3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancelar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buscarboton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\salir boton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nuevo4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\agregar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\agregar imagen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\agregar imagen1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\001-atras.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\004-chevron-izquierdo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\003-chevron-derecho.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\002-proximo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\005-senal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\006-cheque.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\007-lupa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imprimir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\salida.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\medicine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\medicine1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\medicine2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\medicine %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\internet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconito de acerca de.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\de.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\corazon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\aceptar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\copia de seguridad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\restaurar1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\restaurargrande.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CapaNegocio\CapaNegocio.csproj">
+      <Project>{2ff0cc40-e1e2-4dab-a001-fae24b07cdd9}</Project>
+      <Name>CapaNegocio</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
