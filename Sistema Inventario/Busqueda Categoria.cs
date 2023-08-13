@@ -144,6 +144,7 @@ namespace Sistema_Inventario
 
         private void MostrarDatos()
         {
+            valorparametro = Tbuscar.Text.Trim();
             CNCategoria categoria = new CNCategoria();
 
             DataTable dt = categoria.CategoriaConsultar(valorparametro);
@@ -157,7 +158,8 @@ namespace Sistema_Inventario
             }
             else
             {
-                //MessageBox.Show("No se encontraron categorias.");
+
+               
             }
 
             // Mensajes de depuración
@@ -171,11 +173,31 @@ namespace Sistema_Inventario
             }
         }
 
-
-
-        private void MostrarDatos2()
+        private void Tbuscar_TextChanged(object sender, EventArgs e)
         {
-            string valorparametro = Tbuscar.Text.Trim();
+            if (Tbuscar.Text != String.Empty) //Si se introdujo un dato en el textbox
+            {
+
+                vtieneparametro = 1; //se indica que se trabajará con parámetros
+                                     //Se coloca el signo % para que el dato indicado se busque en cualquier parte del campo
+                valorparametro = "%" + Tbuscar.Text.Trim() + "%";
+                valorparametro = Tbuscar.Text.Trim();
+            }
+            else //si el textbox está vacío
+            {
+                vtieneparametro = 0; //se indica que no se trabajará con parámetros
+                valorparametro = ""; //Se vuelve vacío la variable del parámetro.
+                MostrarDatos2();
+            }
+
+            MostrarDatos(); //Se llama al método MostrarDatos
+        }
+
+            private void MostrarDatos2()
+
+        {
+            valorparametro = Tbuscar.Text.Trim();
+            //string valorparametro = Tbuscar.Text.Trim();
             CNCategoria categoria = new CNCategoria();
 
             //Aquí es donde se llama al método EmpleadoConsultarTodos de la clase CDEmpleado
@@ -192,7 +214,9 @@ namespace Sistema_Inventario
             }
             else
             {
-                //MessageBox.Show("No se encontraron categorias.");
+                
+                    
+
 
             }
         }

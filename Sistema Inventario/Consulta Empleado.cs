@@ -114,6 +114,24 @@ namespace Sistema_Inventario
             reporte.ShowDialog();
         }
 
+        private void Tbuscar_TextChanged(object sender, EventArgs e)
+        {
+            if (Tbuscar.Text != String.Empty) //Si se introdujo un dato en el textbox
+            {
+                vtieneparametro = 1; //se indica que se trabajará con parámetros
+                                     //Se coloca el signo % para que el dato indicado se busque en cualquier parte del campo
+                valorparametro = "%" + Tbuscar.Text.Trim() + "%";
+            }
+            else //si el textbox está vacío 
+            {
+                vtieneparametro = 0; //se indica que no se trabajará con parámetros
+                valorparametro = ""; //Se vuelve vacío la variable del parámetro.
+            }
+            MostrarDatos(); //Se llama al método MostrarDatos
+            MostrarDatos2();
+            Tbuscar.Focus(); //Se le pasa el cursos al textbox
+        }
+
         private void BAceptar_Click(object sender, EventArgs e)
         {
             Close(); //Se cierra el formulario
@@ -148,7 +166,7 @@ namespace Sistema_Inventario
                 MessageBox.Show("No se retornó ningún valor!");
             }
             DGVDatos.Refresh(); //Se refresca el DataGridView
-            LCantMov.Text = Convert.ToString(DGVDatos.RowCount); //Se muestra la cantidad de datos
+            LCantMov.Text = Convert.ToString(DGVDatos.RowCount-1); //Se muestra la cantidad de datos
             if (DGVDatos.RowCount <= 0) //Si no se obtienen datos de retorno
             {
                 MessageBox.Show("Ningún dato que mostrar!"); //Se muestra un mensaje de error

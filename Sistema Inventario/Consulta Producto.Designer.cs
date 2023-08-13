@@ -38,6 +38,7 @@ namespace Sistema_Inventario
             this.Tbuscar = new System.Windows.Forms.TextBox();
             this.LInformacion = new System.Windows.Forms.Label();
             this.PBotones = new System.Windows.Forms.Panel();
+            this.LCantMov = new System.Windows.Forms.Label();
             this.LCantidad = new System.Windows.Forms.Label();
             this.BSalir = new System.Windows.Forms.Button();
             this.BImprimir = new System.Windows.Forms.Button();
@@ -47,7 +48,6 @@ namespace Sistema_Inventario
             this.BPrimero = new System.Windows.Forms.Button();
             this.DGVDatos = new System.Windows.Forms.DataGridView();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.LCantMov = new System.Windows.Forms.Label();
             this.PTitulo.SuspendLayout();
             this.PInformacion.SuspendLayout();
             this.PBotones.SuspendLayout();
@@ -131,6 +131,7 @@ namespace Sistema_Inventario
             this.Tbuscar.Name = "Tbuscar";
             this.Tbuscar.Size = new System.Drawing.Size(439, 32);
             this.Tbuscar.TabIndex = 1;
+            this.Tbuscar.TextChanged += new System.EventHandler(this.Tbuscar_TextChanged);
             // 
             // LInformacion
             // 
@@ -159,6 +160,16 @@ namespace Sistema_Inventario
             this.PBotones.Name = "PBotones";
             this.PBotones.Size = new System.Drawing.Size(1321, 152);
             this.PBotones.TabIndex = 1;
+            // 
+            // LCantMov
+            // 
+            this.LCantMov.AutoSize = true;
+            this.LCantMov.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LCantMov.Location = new System.Drawing.Point(732, 8);
+            this.LCantMov.Name = "LCantMov";
+            this.LCantMov.Size = new System.Drawing.Size(31, 36);
+            this.LCantMov.TabIndex = 13;
+            this.LCantMov.Text = "0";
             // 
             // LCantidad
             // 
@@ -333,15 +344,6 @@ namespace Sistema_Inventario
             this.DGVDatos.Size = new System.Drawing.Size(1321, 264);
             this.DGVDatos.TabIndex = 2;
             this.DGVDatos.CurrentCellChanged += new System.EventHandler(this.DGVDatos_CurrentCellChanged);
-            // 
-            // LCantMov
-            // 
-            this.LCantMov.AutoSize = true;
-            this.LCantMov.Location = new System.Drawing.Point(732, 21);
-            this.LCantMov.Name = "LCantMov";
-            this.LCantMov.Size = new System.Drawing.Size(20, 21);
-            this.LCantMov.TabIndex = 13;
-            this.LCantMov.Text = "0";
             // 
             // Consulta_Producto
             // 

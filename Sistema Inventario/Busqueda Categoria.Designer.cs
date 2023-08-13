@@ -129,6 +129,7 @@ namespace Sistema_Inventario
             this.Tbuscar.Name = "Tbuscar";
             this.Tbuscar.Size = new System.Drawing.Size(439, 32);
             this.Tbuscar.TabIndex = 1;
+            this.Tbuscar.TextChanged += new System.EventHandler(this.Tbuscar_TextChanged);
             // 
             // LInformacion
             // 

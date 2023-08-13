@@ -131,6 +131,7 @@ namespace Sistema_Inventario
             this.Tbuscar.Name = "Tbuscar";
             this.Tbuscar.Size = new System.Drawing.Size(439, 32);
             this.Tbuscar.TabIndex = 1;
+            this.Tbuscar.TextChanged += new System.EventHandler(this.Tbuscar_TextChanged);
             // 
             // LInformacion
             // 
@@ -163,9 +164,10 @@ namespace Sistema_Inventario
             // LCantMov
             // 
             this.LCantMov.AutoSize = true;
-            this.LCantMov.Location = new System.Drawing.Point(736, 21);
+            this.LCantMov.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LCantMov.Location = new System.Drawing.Point(734, 8);
             this.LCantMov.Name = "LCantMov";
-            this.LCantMov.Size = new System.Drawing.Size(20, 21);
+            this.LCantMov.Size = new System.Drawing.Size(31, 36);
             this.LCantMov.TabIndex = 13;
             this.LCantMov.Text = "0";
             // 

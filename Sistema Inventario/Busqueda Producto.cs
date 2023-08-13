@@ -70,7 +70,7 @@ namespace Sistema_Inventario
                 // el valor de la clave correspondiente
                 Program.modificar = true;
                 Program.vId_Producto = Convert.ToInt32(DGVDatos.CurrentRow.Cells[0].Value); //datagridview
-               // Program.vtextBox1 = Convert.ToInt32(DGVDatos.CurrentRow.Cells[1].Value); //btn buscar
+                                                                                            // Program.vtextBox1 = Convert.ToInt32(DGVDatos.CurrentRow.Cells[1].Value); //btn buscar
             }
             Close();
 
@@ -156,9 +156,9 @@ namespace Sistema_Inventario
                 valorparametro = ""; //Se vuelve vacío la variable del parámetro.
                 MostrarDatos();
             }
-          //  MostrarDatos(); //Se llama al método MostrarDatos
-  
-    
+            //  MostrarDatos(); //Se llama al método MostrarDatos
+
+
 
         }
 
@@ -202,8 +202,31 @@ namespace Sistema_Inventario
             }
         }
 
+        private void Tbuscar_TextChanged(object sender, EventArgs e)
+        {
+            if (Tbuscar.Text != String.Empty) //Si se introdujo un dato en el textbox
+            {
 
-        private void MostrarDatos()
+                vtieneparametro = 1; //se indica que se trabajará con parámetros
+                                     //Se coloca el signo % para que el dato indicado se busque en cualquier parte del campo
+                valorparametro = "%" + Tbuscar.Text.Trim() + "%";
+                //valorparametro = tbBuscar.Text.Trim();
+                MostrarDatos2();
+            }
+            else //si el textbox está vacío
+            {
+                vtieneparametro = 0; //se indica que no se trabajará con parámetros
+                valorparametro = ""; //Se vuelve vacío la variable del parámetro.
+                MostrarDatos();
+            }
+            //  MostrarDatos(); //Se llama al método MostrarDatos
+
+
+
+        }
+    
+
+    private void MostrarDatos()
         {
 
             string valorparametro = Tbuscar.Text.Trim();

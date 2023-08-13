@@ -185,7 +185,24 @@ namespace Sistema_Inventario
             }
         }
 
+        private void Tbuscar_TextChanged(object sender, EventArgs e)
+        {
+            if (Tbuscar.Text != String.Empty) //Si se introdujo un dato en el textbox
+            {
 
+                vtieneparametro = 1; //se indica que se trabajará con parámetros
+                                     //Se coloca el signo % para que el dato indicado se busque en cualquier parte del campo
+                valorparametro = "%" + Tbuscar.Text.Trim() + "%";
+                //valorparametro = tbBuscar.Text.Trim();
+            }
+            else //si el textbox está vacío
+            {
+                vtieneparametro = 0; //se indica que no se trabajará con parámetros
+                valorparametro = ""; //Se vuelve vacío la variable del parámetro.
+            }
+            MostrarDatos(); //Se llama al método MostrarDatos
+            MostrarDatos2();
+        }
 
         private void MostrarDatos()
         {
