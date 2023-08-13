@@ -52,12 +52,42 @@ namespace CapaNegocio
         public DataTable MovimientoInventarioConsultar(string miparametro)
         {
             CDMovimientoInventario objCDMovimientoInventario = new CDMovimientoInventario();
-            DataTable dt = new DataTable(); //creamos un nuevo DataTable
-                                            //El DataTable se llena con todos los datos devueltos
-          dt = objCDMovimientoInventario.MovimientoInventarioConsultar(miparametro);
-            return dt; //Se retorna el DataTable con los datos adquiridos
+            DataTable dt = new DataTable();
+
+            try
+            {
+                using (SqlCommand sqlCommand = new SqlCommand())
+                {
+                    sqlCommand.Connection = new InventarioConexion().dbconexion;
+                    sqlCommand.Connection.Open();
+                    sqlCommand.CommandText = "Movimiento_InventarioConsultar";
+                    sqlCommand.CommandType = CommandType.StoredProcedure;
+                    sqlCommand.Parameters.AddWithValue("@pId_Inventario", miparametro);
+                    SqlDataReader leerDatos = sqlCommand.ExecuteReader();
+                    dt.Load(leerDatos);
+                    sqlCommand.Connection.Close();
+                }
+            }
+            catch (Exception)
+            {
+                dt = null;
+            }
+
+            return dt;
         }
 
+
+
+
+
+        public DataTable MovimientoInventarioConsultarTodos()
+        {
+            CDMovimientoInventario objCDMovimientoInventario = new CDMovimientoInventario();
+            DataTable dt = new DataTable(); // Creamos un nuevo DataTable
+                                            // El DataTable se llena con todos los datos devueltos
+            dt = objCDMovimientoInventario.MovimientoInventarioConsultarTodos(); // Cambiamos el método para consultar todos los registros
+            return dt; // Se retorna el DataTable con los datos adquiridos
+        }
 
 
     }

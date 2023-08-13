@@ -114,12 +114,75 @@ namespace Sistema_Inventario
         private void Bguardar_Click(object sender, EventArgs e)
         
             {
-          
+            //Validamos los datos requeridos entes de Insertar o Actualizar
+           
+            if (TNombre.Text == String.Empty)
+            {
+                MessageBox.Show("Debe indicar el ID del producto!");
+                TNombre.Focus();
             }
+            else
+            if (CTipodemovimiento.Text == String.Empty)
+            {
+                MessageBox.Show("Debe seleccionar el tipo de movimiento!");
+                CTipodemovimiento.Focus();
+            }
+            else
+            if (TCantidad.Text == String.Empty)
+            {
+                MessageBox.Show("Debe indicar la cantidad del movimiento!");
+                TCantidad.Focus();
+            }
+            else
+            if (DFecha.Text == String.Empty)
+            {
+                MessageBox.Show("Debe seleccionar la fecha del movimiento!");
+                DFecha.Focus();
+            }
+            else
+            if (CCEmpleado.Text == String.Empty)
+            {
+                MessageBox.Show("Debe seleccionar el ID del Empleado!");
+                CCEmpleado.Focus();
+            }
+            else
 
-        
+            {
 
-        private void Bsalir_Click(object sender, EventArgs e)
+                if (Program.nuevo) //Si la variable nuevo llega con valor true se van a Insertar nuevos datos
+
+                {
+                    int Id_ProdM = 0;
+                    int.TryParse(TNombre.Text, out Id_ProdM);
+
+                    int Cantidad = 0;
+                    int.TryParse(TCantidad.Text, out Cantidad);
+
+                    int Id_EmpM = 0;
+                    if (CCEmpleado.SelectedItem != null)
+                    {
+                        Id_EmpM = Convert.ToInt32(CCEmpleado.SelectedValue);
+                    }
+
+                    mensaje = CNMovimientoInventario.Insertar(Program.vMovimiento_Inventario, Id_ProdM, Cantidad, CTipodemovimiento.Text,
+                    Id_EmpM, DFecha.Value);
+                }
+
+                MessageBox.Show(mensaje, "Mensage de InventarioMAJO", MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+
+                //Se prepara todo para la próxima operación
+                Program.nuevo = false;
+
+                Limpiar(); //Llama al método LimpiaObjetos
+            } //Fin del else para validar los datos
+        }
+
+    
+
+
+
+    private void Bsalir_Click(object sender, EventArgs e)
         {
             //Close();
             Movimiento_Inventario.ActiveForm.Close();

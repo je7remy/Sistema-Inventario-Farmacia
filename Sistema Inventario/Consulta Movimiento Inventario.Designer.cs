@@ -35,9 +35,10 @@ namespace Sistema_Inventario
             this.PInformacion = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbBuscar = new System.Windows.Forms.TextBox();
             this.LInformacion = new System.Windows.Forms.Label();
             this.PBotones = new System.Windows.Forms.Panel();
+            this.LCantMov = new System.Windows.Forms.Label();
             this.LCantidad = new System.Windows.Forms.Label();
             this.BAceptar = new System.Windows.Forms.Button();
             this.BCancelar = new System.Windows.Forms.Button();
@@ -45,13 +46,12 @@ namespace Sistema_Inventario
             this.BSiguiente = new System.Windows.Forms.Button();
             this.BAnterior = new System.Windows.Forms.Button();
             this.BPrimero = new System.Windows.Forms.Button();
-            this.DataGridViewDatos = new System.Windows.Forms.DataGridView();
+            this.DGVdatos = new System.Windows.Forms.DataGridView();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.LCantMov = new System.Windows.Forms.Label();
             this.PTitulo.SuspendLayout();
             this.PInformacion.SuspendLayout();
             this.PBotones.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DataGridViewDatos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVdatos)).BeginInit();
             this.SuspendLayout();
             // 
             // PTitulo
@@ -82,7 +82,7 @@ namespace Sistema_Inventario
             this.PInformacion.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.PInformacion.Controls.Add(this.button2);
             this.PInformacion.Controls.Add(this.label1);
-            this.PInformacion.Controls.Add(this.textBox1);
+            this.PInformacion.Controls.Add(this.tbBuscar);
             this.PInformacion.Controls.Add(this.LInformacion);
             this.PInformacion.Dock = System.Windows.Forms.DockStyle.Top;
             this.PInformacion.Location = new System.Drawing.Point(0, 100);
@@ -113,6 +113,7 @@ namespace Sistema_Inventario
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.toolTip1.SetToolTip(this.button2, "Buscar dato");
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label1
             // 
@@ -124,13 +125,14 @@ namespace Sistema_Inventario
             this.label1.TabIndex = 3;
             this.label1.Text = "Buscar Dato";
             // 
-            // textBox1
+            // tbBuscar
             // 
-            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(250, 41);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(439, 32);
-            this.textBox1.TabIndex = 1;
+            this.tbBuscar.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbBuscar.Location = new System.Drawing.Point(250, 41);
+            this.tbBuscar.Name = "tbBuscar";
+            this.tbBuscar.Size = new System.Drawing.Size(439, 32);
+            this.tbBuscar.TabIndex = 1;
+            this.tbBuscar.TextChanged += new System.EventHandler(this.tbBuscar_TextChanged);
             // 
             // LInformacion
             // 
@@ -160,6 +162,16 @@ namespace Sistema_Inventario
             this.PBotones.Size = new System.Drawing.Size(1077, 152);
             this.PBotones.TabIndex = 1;
             this.PBotones.Paint += new System.Windows.Forms.PaintEventHandler(this.PBotones_Paint);
+            // 
+            // LCantMov
+            // 
+            this.LCantMov.AutoSize = true;
+            this.LCantMov.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LCantMov.Location = new System.Drawing.Point(786, 8);
+            this.LCantMov.Name = "LCantMov";
+            this.LCantMov.Size = new System.Drawing.Size(31, 36);
+            this.LCantMov.TabIndex = 13;
+            this.LCantMov.Text = "0";
             // 
             // LCantidad
             // 
@@ -244,6 +256,7 @@ namespace Sistema_Inventario
             this.BUltimo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.toolTip1.SetToolTip(this.BUltimo, "Ir al ultimo registro");
             this.BUltimo.UseVisualStyleBackColor = false;
+            this.BUltimo.Click += new System.EventHandler(this.BUltimo_Click);
             // 
             // BSiguiente
             // 
@@ -268,6 +281,7 @@ namespace Sistema_Inventario
             this.BSiguiente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.toolTip1.SetToolTip(this.BSiguiente, "Ir al registro siguiente");
             this.BSiguiente.UseVisualStyleBackColor = false;
+            this.BSiguiente.Click += new System.EventHandler(this.BSiguiente_Click);
             // 
             // BAnterior
             // 
@@ -292,6 +306,7 @@ namespace Sistema_Inventario
             this.BAnterior.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.toolTip1.SetToolTip(this.BAnterior, "Ir al registro anterior");
             this.BAnterior.UseVisualStyleBackColor = false;
+            this.BAnterior.Click += new System.EventHandler(this.BAnterior_Click);
             // 
             // BPrimero
             // 
@@ -317,27 +332,20 @@ namespace Sistema_Inventario
             this.BPrimero.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.toolTip1.SetToolTip(this.BPrimero, "Ir al primer registro");
             this.BPrimero.UseVisualStyleBackColor = false;
+            this.BPrimero.Click += new System.EventHandler(this.BPrimero_Click);
             // 
-            // DataGridViewDatos
+            // DGVdatos
             // 
-            this.DataGridViewDatos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.DataGridViewDatos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.DataGridViewDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DataGridViewDatos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DataGridViewDatos.Location = new System.Drawing.Point(0, 200);
-            this.DataGridViewDatos.Name = "DataGridViewDatos";
-            this.DataGridViewDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DataGridViewDatos.Size = new System.Drawing.Size(1077, 264);
-            this.DataGridViewDatos.TabIndex = 2;
-            // 
-            // LCantMov
-            // 
-            this.LCantMov.AutoSize = true;
-            this.LCantMov.Location = new System.Drawing.Point(790, 21);
-            this.LCantMov.Name = "LCantMov";
-            this.LCantMov.Size = new System.Drawing.Size(20, 21);
-            this.LCantMov.TabIndex = 13;
-            this.LCantMov.Text = "0";
+            this.DGVdatos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DGVdatos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.DGVdatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVdatos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DGVdatos.Location = new System.Drawing.Point(0, 200);
+            this.DGVdatos.Name = "DGVdatos";
+            this.DGVdatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DGVdatos.Size = new System.Drawing.Size(1077, 264);
+            this.DGVdatos.TabIndex = 2;
+            this.DGVdatos.CurrentCellChanged += new System.EventHandler(this.DGVdatos_CurrentCellChanged);
             // 
             // Consulta_Movimiento_Inventario
             // 
@@ -345,7 +353,7 @@ namespace Sistema_Inventario
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1077, 616);
-            this.Controls.Add(this.DataGridViewDatos);
+            this.Controls.Add(this.DGVdatos);
             this.Controls.Add(this.PInformacion);
             this.Controls.Add(this.PBotones);
             this.Controls.Add(this.PTitulo);
@@ -355,13 +363,15 @@ namespace Sistema_Inventario
             this.Name = "Consulta_Movimiento_Inventario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Busqueda_Empleado";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Consulta_Movimiento_Inventario_FormClosing);
+            this.Load += new System.EventHandler(this.Consulta_Movimiento_Inventario_Load);
             this.PTitulo.ResumeLayout(false);
             this.PTitulo.PerformLayout();
             this.PInformacion.ResumeLayout(false);
             this.PInformacion.PerformLayout();
             this.PBotones.ResumeLayout(false);
             this.PBotones.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DataGridViewDatos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVdatos)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -372,9 +382,9 @@ namespace Sistema_Inventario
         private System.Windows.Forms.Panel PInformacion;
         private System.Windows.Forms.Panel PBotones;
         private System.Windows.Forms.Label LTitulo;
-        private System.Windows.Forms.DataGridView DataGridViewDatos;
+        private System.Windows.Forms.DataGridView DGVdatos;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbBuscar;
         private System.Windows.Forms.Label LInformacion;
         private System.Windows.Forms.Button BAceptar;
         private System.Windows.Forms.Button BCancelar;

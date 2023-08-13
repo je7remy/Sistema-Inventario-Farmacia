@@ -145,7 +145,7 @@ namespace CapaDatos
                 {
                     sqlCommand.Connection = new InventarioConexion().dbconexion;
                     sqlCommand.Connection.Open();
-                    sqlCommand.CommandText = "MovimientoInventarioConsultar";
+                    sqlCommand.CommandText = "SELECT* FROM Movimiento_Inventario";
                     sqlCommand.CommandType = CommandType.StoredProcedure;
                     sqlCommand.Parameters.AddWithValue("@pId_Inventario", miparametro);
                     leerDatos = sqlCommand.ExecuteReader();
@@ -160,5 +160,39 @@ namespace CapaDatos
 
             return dt;
         }
+
+
+        public DataTable MovimientoInventarioConsultarTodos()
+        {
+            DataTable dt = new DataTable();
+
+            try
+            {
+                using (SqlConnection connection = new InventarioConexion().dbconexion)
+                {
+                    connection.Open();
+
+                    using (SqlCommand sqlCommand = new SqlCommand())
+                    {
+                        sqlCommand.Connection = connection;
+                        sqlCommand.CommandText = "SELECT * FROM Movimiento_Inventario"; // Cambia esto a la consulta SQL adecuada
+                        SqlDataReader reader = sqlCommand.ExecuteReader();
+
+                        dt.Load(reader);
+
+                        reader.Close();
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                dt = null;
+            }
+
+            return dt;
+        }
+
+
+
     }
 }
