@@ -1,0 +1,44 @@
+C:\C#\Inventario Botica Sila\Sistema Inventario\CapaNegocio\bin\Debug\DBInventario.mdf
+C:\C#\Inventario Botica Sila\Sistema Inventario\CapaNegocio\bin\Debug\DBInventario_log.ldf
+C:\C#\Inventario Botica Sila\Sistema Inventario\CapaNegocio\bin\Debug\CapaNegocio.dll
+C:\C#\Inventario Botica Sila\Sistema Inventario\CapaNegocio\bin\Debug\CapaNegocio.pdb
+C:\C#\Inventario Botica Sila\Sistema Inventario\CapaNegocio\bin\Debug\CapaDatos.dll
+C:\C#\Inventario Botica Sila\Sistema Inventario\CapaNegocio\bin\Debug\CapaDatos.pdb
+C:\C#\Inventario Botica Sila\Sistema Inventario\CapaNegocio\obj\Debug\CapaNegocio.csproj.AssemblyReference.cache
+C:\C#\Inventario Botica Sila\Sistema Inventario\CapaNegocio\obj\Debug\CapaNegocio.csproj.CoreCompileInputs.cache
+C:\C#\Inventario Botica Sila\Sistema Inventario\CapaNegocio\obj\Debug\CapaNegocio.csproj.CopyComplete
+C:\C#\Inventario Botica Sila\Sistema Inventario\CapaNegocio\obj\Debug\CapaNegocio.dll
+C:\C#\Inventario Botica Sila\Sistema Inventario\CapaNegocio\obj\Debug\CapaNegocio.pdb
+C:\C#\Sistema Inventario Farmacia\CapaNegocio\bin\Debug\DBInventario.mdf
+C:\C#\Sistema Inventario Farmacia\CapaNegocio\bin\Debug\DBInventario_log.ldf
+C:\C#\Sistema Inventario Farmacia\CapaNegocio\bin\Debug\CapaNegocio.dll
+C:\C#\Sistema Inventario Farmacia\CapaNegocio\bin\Debug\CapaNegocio.pdb
+C:\C#\Sistema Inventario Farmacia\CapaNegocio\bin\Debug\CapaDatos.dll
+C:\C#\Sistema Inventario Farmacia\CapaNegocio\bin\Debug\CapaDatos.pdb
+C:\C#\Sistema Inventario Farmacia\CapaNegocio\obj\Debug\CapaNegocio.csproj.AssemblyReference.cache
+C:\C#\Sistema Inventario Farmacia\CapaNegocio\obj\Debug\CapaNegocio.csproj.CoreCompileInputs.cache
+C:\C#\Sistema Inventario Farmacia\CapaNegocio\obj\Debug\CapaNegocio.csproj.CopyComplete
+C:\C#\Sistema Inventario Farmacia\CapaNegocio\obj\Debug\CapaNegocio.dll
+C:\C#\Sistema Inventario Farmacia\CapaNegocio\obj\Debug\CapaNegocio.pdb
+C:\C#\Sistema-Inventario-Farmacia\CapaNegocio\bin\Debug\DBInventario.mdf
+C:\C#\Sistema-Inventario-Farmacia\CapaNegocio\bin\Debug\DBInventario_log.ldf
+C:\C#\Sistema-Inventario-Farmacia\CapaNegocio\bin\Debug\CapaNegocio.dll
+C:\C#\Sistema-Inventario-Farmacia\CapaNegocio\bin\Debug\CapaNegocio.pdb
+C:\C#\Sistema-Inventario-Farmacia\CapaNegocio\bin\Debug\CapaDatos.dll
+C:\C#\Sistema-Inventario-Farmacia\CapaNegocio\bin\Debug\CapaDatos.pdb
+C:\C#\Sistema-Inventario-Farmacia\CapaNegocio\obj\Debug\CapaNegocio.csproj.AssemblyReference.cache
+C:\C#\Sistema-Inventario-Farmacia\CapaNegocio\obj\Debug\CapaNegocio.csproj.CoreCompileInputs.cache
+C:\C#\Sistema-Inventario-Farmacia\CapaNegocio\obj\Debug\CapaNegocio.csproj.CopyComplete
+C:\C#\Sistema-Inventario-Farmacia\CapaNegocio\obj\Debug\CapaNegocio.dll
+C:\C#\Sistema-Inventario-Farmacia\CapaNegocio\obj\Debug\CapaNegocio.pdb
+C:\C#\Sistema-Inventario-Farmacia-main\CapaNegocio\bin\Debug\DBInventario.mdf
+C:\C#\Sistema-Inventario-Farmacia-main\CapaNegocio\bin\Debug\DBInventario_log.ldf
+C:\C#\Sistema-Inventario-Farmacia-main\CapaNegocio\bin\Debug\CapaNegocio.dll
+C:\C#\Sistema-Inventario-Farmacia-main\CapaNegocio\bin\Debug\CapaNegocio.pdb
+C:\C#\Sistema-Inventario-Farmacia-main\CapaNegocio\bin\Debug\CapaDatos.dll
+C:\C#\Sistema-Inventario-Farmacia-main\CapaNegocio\bin\Debug\CapaDatos.pdb
+C:\C#\Sistema-Inventario-Farmacia-main\CapaNegocio\obj\Debug\CapaNegocio.csproj.AssemblyReference.cache
+C:\C#\Sistema-Inventario-Farmacia-main\CapaNegocio\obj\Debug\CapaNegocio.csproj.CoreCompileInputs.cache
+C:\C#\Sistema-Inventario-Farmacia-main\CapaNegocio\obj\Debug\CapaNegocio.csproj.CopyComplete
+C:\C#\Sistema-Inventario-Farmacia-main\CapaNegocio\obj\Debug\CapaNegocio.dll
+C:\C#\Sistema-Inventario-Farmacia-main\CapaNegocio\obj\Debug\CapaNegocio.pdb
