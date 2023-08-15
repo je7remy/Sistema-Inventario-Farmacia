@@ -32,10 +32,10 @@ namespace Sistema_Inventario
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.DBInventarioMovimiento_Inventario = new Sistema_Inventario.DBInventarioMovimiento_Inventario();
+            this.DBInventarioMovimientoInventario = new Sistema_Inventario.DBInventarioMovimientoInventario();
             this.Movimiento_InventarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.Movimiento_InventarioTableAdapter = new Sistema_Inventario.DBInventarioMovimiento_InventarioTableAdapters.Movimiento_InventarioTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.DBInventarioMovimiento_Inventario)).BeginInit();
+            this.Movimiento_InventarioTableAdapter = new Sistema_Inventario.DBInventarioMovimientoInventarioTableAdapters.Movimiento_InventarioTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.DBInventarioMovimientoInventario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Movimiento_InventarioBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,15 +52,15 @@ namespace Sistema_Inventario
             this.reportViewer1.Size = new System.Drawing.Size(800, 450);
             this.reportViewer1.TabIndex = 0;
             // 
-            // DBInventarioMovimiento_Inventario
+            // DBInventarioMovimientoInventario
             // 
-            this.DBInventarioMovimiento_Inventario.DataSetName = "DBInventarioMovimiento_Inventario";
-            this.DBInventarioMovimiento_Inventario.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.DBInventarioMovimientoInventario.DataSetName = "DBInventarioMovimientoInventario";
+            this.DBInventarioMovimientoInventario.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // Movimiento_InventarioBindingSource
             // 
             this.Movimiento_InventarioBindingSource.DataMember = "Movimiento_Inventario";
-            this.Movimiento_InventarioBindingSource.DataSource = this.DBInventarioMovimiento_Inventario;
+            this.Movimiento_InventarioBindingSource.DataSource = this.DBInventarioMovimientoInventario;
             // 
             // Movimiento_InventarioTableAdapter
             // 
@@ -75,7 +75,7 @@ namespace Sistema_Inventario
             this.Name = "FRMovimientoInventario";
             this.Text = "FRMovimientoInventario";
             this.Load += new System.EventHandler(this.FRMovimientoInventario_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.DBInventarioMovimiento_Inventario)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DBInventarioMovimientoInventario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Movimiento_InventarioBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -85,7 +85,7 @@ namespace Sistema_Inventario
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.BindingSource Movimiento_InventarioBindingSource;
-        private DBInventarioMovimiento_Inventario DBInventarioMovimiento_Inventario;
-        private DBInventarioMovimiento_InventarioTableAdapters.Movimiento_InventarioTableAdapter Movimiento_InventarioTableAdapter;
+        private DBInventarioMovimientoInventario DBInventarioMovimientoInventario;
+        private DBInventarioMovimientoInventarioTableAdapters.Movimiento_InventarioTableAdapter Movimiento_InventarioTableAdapter;
     }
 }

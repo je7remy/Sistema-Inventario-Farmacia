@@ -12,9 +12,9 @@ namespace CapaNegocio
 {
   public class CNMovimientoInventario
     {
+
         public static string Insertar(int pId_Inventario, int pId_Producto, int pCantidad, string pTipo_De_Movimiento, int pId_Empleado, DateTime pFecha)
         {
-
             CDMovimientoInventario objCDMovimientoInventario = new CDMovimientoInventario();
 
             objCDMovimientoInventario.Id_Inventario = pId_Producto;
@@ -24,6 +24,7 @@ namespace CapaNegocio
             objCDMovimientoInventario.Id_Empleado = pId_Empleado;
             objCDMovimientoInventario.Fecha = pFecha;
 
+            //mensaje = objCDMovimientoInventario.Insertar(objCDMovimientoInventario); // Cambio aquí
 
             return objCDMovimientoInventario.Insertar(objCDMovimientoInventario);
         }//Fin del método Insertar

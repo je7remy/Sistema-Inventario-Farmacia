@@ -166,7 +166,7 @@ namespace Sistema_Inventario
         }
 
 
-        private void MostrarDatos2()
+        private void MostrarDatos2() //4
         {
 
           string valorparametro = tbBuscar.Text.Trim();
@@ -198,7 +198,7 @@ namespace Sistema_Inventario
             }
         }
 
-        private void MostrarDatos()
+        private void MostrarDatos() //3
         {
 
             string valorparametro = tbBuscar.Text.Trim();

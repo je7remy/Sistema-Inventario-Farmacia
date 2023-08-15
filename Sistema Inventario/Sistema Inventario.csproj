@@ -80,10 +80,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Consulta Maestro Empleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consulta Maestro Empleado.Designer.cs">
+      <DependentUpon>Consulta Maestro Empleado.cs</DependentUpon>
+    </Compile>
     <Compile Include="DBInventarioEmpleado.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DBInventarioEmpleado.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DBInventarioMovimientoInventario.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBInventarioMovimientoInventario.xsd</DependentUpon>
     </Compile>
     <Compile Include="DBInventarioMovimiento_Inventario.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -218,6 +229,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="Consulta Maestro Empleado.resx">
+      <DependentUpon>Consulta Maestro Empleado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FREmpleado.resx">
       <DependentUpon>FREmpleado.cs</DependentUpon>
     </EmbeddedResource>
@@ -301,6 +315,17 @@
     </None>
     <None Include="DBInventarioEmpleado.xss">
       <DependentUpon>DBInventarioEmpleado.xsd</DependentUpon>
+    </None>
+    <None Include="DBInventarioMovimientoInventario.xsc">
+      <DependentUpon>DBInventarioMovimientoInventario.xsd</DependentUpon>
+    </None>
+    <None Include="DBInventarioMovimientoInventario.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DBInventarioMovimientoInventario.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DBInventarioMovimientoInventario.xss">
+      <DependentUpon>DBInventarioMovimientoInventario.xsd</DependentUpon>
     </None>
     <None Include="DBInventarioMovimiento_Inventario.xsc">
       <DependentUpon>DBInventarioMovimiento_Inventario.xsd</DependentUpon>

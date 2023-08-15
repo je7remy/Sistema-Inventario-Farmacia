@@ -319,6 +319,7 @@ namespace Sistema_Inventario
             this.movimientoPorEmpleadoToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
             this.movimientoPorEmpleadoToolStripMenuItem.Text = "Movimiento por empleado";
             this.movimientoPorEmpleadoToolStripMenuItem.ToolTipText = "Visualizar e imprimir movimiento inventario por empleado";
+            this.movimientoPorEmpleadoToolStripMenuItem.Click += new System.EventHandler(this.movimientoPorEmpleadoToolStripMenuItem_Click);
             // 
             // movimientoPorProductoToolStripMenuItem
             // 

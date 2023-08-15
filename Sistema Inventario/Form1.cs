@@ -163,6 +163,13 @@ namespace Sistema_Inventario
             FRMovimientoInventario reporte = new FRMovimientoInventario();
             reporte.ShowDialog();
         }
+
+        private void movimientoPorEmpleadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Consulta_Maestro_Empleado cp = new Consulta_Maestro_Empleado();
+            cp.ShowDialog();
+            ///
+        }
     }
     }
 
