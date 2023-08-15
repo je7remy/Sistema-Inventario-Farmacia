@@ -53,8 +53,10 @@ namespace Sistema_Inventario
             //    indice = DGVDatos.CurrentRow.Index; //El valor de índice será la fila actua
             if (DGVDatos.CurrentRow != null)
             {
-                int idEmpleadoSeleccionado = Convert.ToInt32(DGVDatos.CurrentRow.Cells["Id_Empleado"].Value);
-                MostrarDatos4(idEmpleadoSeleccionado);
+                string valorparametro = "%" + DGVDatos.CurrentRow.Cells["Id_Empleado"].Value.ToString() + "%";
+                string idEmpleado = DGVDatos.CurrentRow.Cells["Id_Empleado"].Value.ToString();
+                DataTable dt = objMovimiento.MovimientoInventarioConsultar(idEmpleado);
+
             }
         }
 
@@ -229,7 +231,7 @@ namespace Sistema_Inventario
         private void MostrarDatos4(int idEmpleado)
         {
             string valorparametro = Tbuscar.Text.Trim();
-            DataTable dt = objMovimiento.MovimientoInventarioConsultar(valorparametro, idEmpleado);
+            DataTable dt = objMovimiento.MovimientoInventarioConsultar(valorparametro);
 
             if (dt != null && dt.Rows.Count > 0)
             {
