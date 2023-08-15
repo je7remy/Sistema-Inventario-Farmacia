@@ -65,6 +65,40 @@ namespace CapaDatos
             set { dFecha = value; }
         }
 
+        //public string Insertar(CDMovimientoInventario objCDMovimientoInventario)
+        //{
+        //    string mensaje = "";
+        //    SqlConnection sqlCon = new SqlConnection();
+
+        //    try
+        //    {
+        //        sqlCon.ConnectionString = InventarioConexion.miconexion;
+        //        SqlCommand sqlCommand = new SqlCommand("MovimientoInventarioInsertar", sqlCon);
+        //        sqlCon.Open();
+
+        //        sqlCommand.CommandType = CommandType.StoredProcedure;
+        //        sqlCommand.Parameters.AddWithValue("@pId_Inventario", objCDMovimientoInventario.Id_Inventario);
+        //        sqlCommand.Parameters.AddWithValue("@pId_Producto", objCDMovimientoInventario.Id_Producto);
+        //        sqlCommand.Parameters.AddWithValue("@pCantidad", objCDMovimientoInventario.Cantidad);
+        //        sqlCommand.Parameters.AddWithValue("@pTipo_De_Movimiento", objCDMovimientoInventario.Tipo_De_Movimiento);
+        //        sqlCommand.Parameters.AddWithValue("@pId_Empleado", objCDMovimientoInventario.Id_Empleado);
+        //        sqlCommand.Parameters.AddWithValue("@pFecha", objCDMovimientoInventario.Fecha);
+
+        //        mensaje = sqlCommand.ExecuteNonQuery() == 1 ? "Inserción de datos completada correctamente!" :
+        //            "No se pudo insertar correctamente los nuevos datos!";
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        mensaje = ex.Message;
+        //    }
+        //    finally
+        //    {
+        //        if (sqlCon.State == ConnectionState.Open)
+        //            sqlCon.Close();
+        //    }
+
+        //    return mensaje;
+        //}
         public string Insertar(CDMovimientoInventario objCDMovimientoInventario)
         {
             string mensaje = "";
@@ -73,10 +107,13 @@ namespace CapaDatos
             try
             {
                 sqlCon.ConnectionString = InventarioConexion.miconexion;
-                SqlCommand sqlCommand = new SqlCommand("Movimiento_InventarioInsertar", sqlCon);
+                SqlCommand sqlCommand = new SqlCommand("MovimientoInventarioInsertar", sqlCon);
                 sqlCon.Open();
 
                 sqlCommand.CommandType = CommandType.StoredProcedure;
+
+                // Parámetros del procedimiento almacenado
+                sqlCommand.Parameters.AddWithValue("@pId_Inventario", objCDMovimientoInventario.Id_Inventario); // Agregar esta línea
                 sqlCommand.Parameters.AddWithValue("@pId_Producto", objCDMovimientoInventario.Id_Producto);
                 sqlCommand.Parameters.AddWithValue("@pCantidad", objCDMovimientoInventario.Cantidad);
                 sqlCommand.Parameters.AddWithValue("@pTipo_De_Movimiento", objCDMovimientoInventario.Tipo_De_Movimiento);
@@ -99,6 +136,7 @@ namespace CapaDatos
             return mensaje;
         }
 
+
         public string Actualizar(CDMovimientoInventario objCDMovimientoInventario)
         {
             string mensaje = "";
@@ -107,7 +145,7 @@ namespace CapaDatos
             try
             {
                 sqlCon.ConnectionString = InventarioConexion.miconexion;
-                SqlCommand sqlCommand = new SqlCommand("Movimiento_InventarioActualizar", sqlCon);
+                SqlCommand sqlCommand = new SqlCommand("MovimientoInventarioActualizar", sqlCon);
                 sqlCon.Open();
 
                 sqlCommand.CommandType = CommandType.StoredProcedure;

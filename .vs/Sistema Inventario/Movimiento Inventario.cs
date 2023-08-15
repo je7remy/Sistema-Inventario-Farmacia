@@ -17,12 +17,12 @@ namespace Sistema_Inventario
 {
     public partial class Movimiento_Inventario : Form
     {
-        private int vtieneparametro;
+      //  private int vtieneparametro;
         public string valorparametro = "", mensaje = "";
-        public static int vId_Inventario = 0, Cantidad = 0;
-        public static string Empleado, Tipo_De_Movimiento, Nombre, Representacion_Grafica;
-        public static DateTime Fecha;
-        public static string miconexion = "Data Source=HDX16T; Initial Catalog = DBInventario; Integrated Security = True;";
+        //public static int vId_Inventario = 0, Cantidad = 0;
+        //public static string Empleado, Tipo_De_Movimiento, Nombre, Representacion_Grafica;
+        //public static DateTime Fecha;
+        //public static string miconexion = "Data Source=HDX16T; Initial Catalog = DBInventario; Integrated Security = True;";
 
 
 
@@ -114,77 +114,105 @@ namespace Sistema_Inventario
         }
 
         private void Bguardar_Click(object sender, EventArgs e)
+        {
+            //if (TNombre.Text == String.Empty)
+            //{
+            //    MessageBox.Show("Debe indicar el ID del producto!");
+            //    TNombre.Focus();
+            //    return;
+            //}
+
+            //if (!int.TryParse(TNombre.Text, out int idProducto))
+            //{
+            //    MessageBox.Show("El ID del producto debe ser un número entero válido.");
+            //    TNombre.Focus();
+            //    return;
+            //}
+
+            //if (!ProductoExiste(idProducto))
+            //{
+            //    MessageBox.Show("El producto con el ID ingresado no existe en la base de datos.");
+            //    TNombre.Focus();
+            //    return;
+            //}
+
         
-            {
-            //Validamos los datos requeridos entes de Insertar o Actualizar
-           
-            if (TNombre.Text == String.Empty)
-            {
-                MessageBox.Show("Debe indicar el ID del producto!");
-                TNombre.Focus();
-            }
-            else
-            if (CTipodemovimiento.Text == String.Empty)
-            {
-                MessageBox.Show("Debe seleccionar el tipo de movimiento!");
-                CTipodemovimiento.Focus();
-            }
-            else
-            if (TCantidad.Text == String.Empty)
-            {
-                MessageBox.Show("Debe indicar la cantidad del movimiento!");
-                TCantidad.Focus();
-            }
-            else
-            if (DFecha.Text == String.Empty)
-            {
-                MessageBox.Show("Debe seleccionar la fecha del movimiento!");
-                DFecha.Focus();
-            }
-            else
-            if (CCEmpleado.Text == String.Empty)
-            {
-                MessageBox.Show("Debe seleccionar el ID del Empleado!");
-                CCEmpleado.Focus();
-            }
-            else
 
+            if (TNombre.Text == String.Empty || CTipodemovimiento.Text == String.Empty  ||
+                TCantidad.Text == String.Empty || DFecha.Text == String.Empty || CCEmpleado.Text == String.Empty)
             {
+                MessageBox.Show("Debe completar todos los campos requeridos.");
+            }
+            else
+            {
+                int Id_Inventario = 0; // Agregar esta línea
+                int.TryParse(textBox1.Text, out Id_Inventario); // Agregar esta línea
 
-                if (Program.nuevo) //Si la variable nuevo llega con valor true se van a Insertar nuevos datos
+                int Id_ProdM = 0;
+                int.TryParse(TNombre.Text, out Id_ProdM);
 
+                int Cantidad = 0;
+                int.TryParse(TCantidad.Text, out Cantidad);
+
+                int Id_EmpM = 0;
+                if (CCEmpleado.SelectedItem != null)
                 {
-                    int Id_ProdM = 0;
-                    int.TryParse(TNombre.Text, out Id_ProdM);
-
-                    int Cantidad = 0;
-                    int.TryParse(TCantidad.Text, out Cantidad);
-
-                    int Id_EmpM = 0;
-                    if (CCEmpleado.SelectedItem != null)
-                    {
-                        Id_EmpM = Convert.ToInt32(CCEmpleado.SelectedValue);
-                    }
-
-                    mensaje = CNMovimientoInventario.Insertar(Program.vMovimiento_Inventario, Id_ProdM, Cantidad, CTipodemovimiento.Text,
-                    Id_EmpM, DFecha.Value);
+                    Id_EmpM = Convert.ToInt32(CCEmpleado.SelectedValue);
                 }
 
-                MessageBox.Show(mensaje, "Mensage de Inventario Farmacia", MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
+                string mensaje = CNMovimientoInventario.Insertar(Id_Inventario, Id_ProdM, Cantidad, CTipodemovimiento.Text, Id_EmpM, DFecha.Value);
+                if (!mensaje.StartsWith("Inserción de datos completada correctamente!"))
+                {
+                    MessageBox.Show("Movimiento de inventario registrado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    // Limpia los campos y prepara para la próxima operación
+                    Limpiar();
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo registrar el movimiento de inventario. Error: " + mensaje, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+              //  MessageBox.Show(mensaje, "Mensaje de Botica Sila", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                //Se prepara todo para la próxima operación
                 Program.nuevo = false;
-
-                Limpiar(); //Llama al método LimpiaObjetos
-            } //Fin del else para validar los datos
+                Limpiar();
+            }
         }
 
-    
+
+
+//        private bool ProductoExiste(int idProducto)
+//        {
+//            try
+//            {
+//                using (SqlConnection sqlCon = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;
+//AttachDbFilename=C:\C#\Sistema-Inventario-Farmacia\CapaDatos\DBInventario.mdf;
+//Integrated Security = True"))
+//                {
+//                    sqlCon.Open();
+
+//                    using (SqlCommand sqlCommand = new SqlCommand())
+//                    {
+//                        sqlCommand.Connection = sqlCon;
+//                        sqlCommand.CommandText = "SELECT COUNT(*) FROM Producto WHERE Id_Producto = @IdProducto";
+//                        sqlCommand.Parameters.AddWithValue("@IdProducto", idProducto);
+
+//                        int count = Convert.ToInt32(sqlCommand.ExecuteScalar());
+
+//                        return count > 0; // Si count es mayor a cero, el producto existe
+//                    }
+//                }
+//            }
+//            catch (Exception ex)
+//            {
+//                MessageBox.Show("Error al verificar la existencia del producto: " + ex.Message, "Error",
+//                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+//                return false; // En caso de error, asumimos que el producto no existe
+//            }
+//        }
 
 
 
-    private void Bsalir_Click(object sender, EventArgs e)
+        private void Bsalir_Click(object sender, EventArgs e)
         {
             //Close();
             Movimiento_Inventario.ActiveForm.Close();
@@ -245,7 +273,7 @@ namespace Sistema_Inventario
             CCategoria.Text = null;
             pictureBox1.Image = null;
             TRepresentaciongrafica.Clear();
-
+            tsinnombre.Clear();
         }
 
         private void Movimiento_Inventario_KeyDown(object sender, KeyEventArgs e)
@@ -266,8 +294,9 @@ namespace Sistema_Inventario
             //los campos correspondientes
             foreach (DataRow row in dt.Rows)
             {
-              
-                TNombre.Text = row["Nombre"].ToString();
+                //tbId_Prod.Text = row["Id_Producto"].ToString(); //////la vuelta...
+                TNombre.Text = row["Id_Producto"].ToString();
+                tsinnombre.Text = row["Nombre"].ToString();
                 CCategoria.Text = ObtenerNombreCategoria(row["Id_Categoria"].ToString());
                 TRepresentaciongrafica.Text = row["Representacion_Grafica"].ToString();
            

@@ -59,6 +59,7 @@ namespace Sistema_Inventario
             this.label10 = new System.Windows.Forms.Label();
             this.TNombre = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.tsinnombre = new System.Windows.Forms.TextBox();
             this.Ptitulo.SuspendLayout();
             this.Pbotones.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -407,6 +408,7 @@ namespace Sistema_Inventario
             this.TNombre.Name = "TNombre";
             this.TNombre.Size = new System.Drawing.Size(251, 39);
             this.TNombre.TabIndex = 31;
+            this.TNombre.Visible = false;
             // 
             // label6
             // 
@@ -418,12 +420,21 @@ namespace Sistema_Inventario
             this.label6.TabIndex = 30;
             this.label6.Text = "Nombre";
             // 
+            // tsinnombre
+            // 
+            this.tsinnombre.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsinnombre.Location = new System.Drawing.Point(259, 290);
+            this.tsinnombre.Name = "tsinnombre";
+            this.tsinnombre.Size = new System.Drawing.Size(251, 39);
+            this.tsinnombre.TabIndex = 32;
+            // 
             // Movimiento_Inventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1043, 749);
+            this.Controls.Add(this.tsinnombre);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.TCantidad);
             this.Controls.Add(this.CTipodemovimiento);
@@ -495,5 +506,6 @@ namespace Sistema_Inventario
         private System.Windows.Forms.TextBox TRepresentaciongrafica;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox CCategoria;
+        private System.Windows.Forms.TextBox tsinnombre;
     }
 }
