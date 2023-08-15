@@ -166,14 +166,14 @@ namespace Sistema_Inventario
         }
 
 
-        private void MostrarDatos2()
+        private void MostrarDatos2() //4
         {
 
           string valorparametro = tbBuscar.Text.Trim();
          
 
 
-            DataTable dt = objMovimiento.MovimientoInventarioConsultar(valorparametro);
+            DataTable dt = objMovimiento.MovimientoInventarioConsultar1(valorparametro);
 
             if (dt != null && dt.Rows.Count > 0)
             {
@@ -198,7 +198,7 @@ namespace Sistema_Inventario
             }
         }
 
-        private void MostrarDatos()
+        private void MostrarDatos() //3
         {
 
             string valorparametro = tbBuscar.Text.Trim();

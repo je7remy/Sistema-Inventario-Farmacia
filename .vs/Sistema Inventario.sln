@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32602.291
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sistema Inventario", "Sistema Inventario\Sistema Inventario.csproj", "{A7FEF777-75A1-482B-9301-084FD2027E58}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaInventario", "Sistema Inventario\SistemaInventario.csproj", "{A7FEF777-75A1-482B-9301-084FD2027E58}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaDatos", "CapaDatos\CapaDatos.csproj", "{752341D9-9455-484B-A11F-61B1B8AC0527}"
 EndProject

@@ -231,6 +231,11 @@ namespace Sistema_Inventario
             }
         }
 
+        internal static object AsEnumerable()
+        {
+            throw new NotImplementedException();
+        }
+
         private void Categoria_Activated(object sender, EventArgs e)
         {
             //Program.nuevo = true;

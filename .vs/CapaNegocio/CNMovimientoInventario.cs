@@ -50,7 +50,7 @@ namespace CapaNegocio
         //Método utilizado para obtener un DataTable con todos los datos de la tabla 
         //correspondiente
 
-        public DataTable MovimientoInventarioConsultar(string miparametro)
+        public DataTable MovimientoInventarioConsultar(string miparametro, int idEmpleado)
         {
             CDMovimientoInventario objCDMovimientoInventario = new CDMovimientoInventario();
             DataTable dt = new DataTable();
@@ -61,9 +61,10 @@ namespace CapaNegocio
                 {
                     sqlCommand.Connection = new InventarioConexion().dbconexion;
                     sqlCommand.Connection.Open();
-                    sqlCommand.CommandText = "Movimiento_InventarioConsultar";
+                    sqlCommand.CommandText = "MovimientoInventarioConsultar";
                     sqlCommand.CommandType = CommandType.StoredProcedure;
                     sqlCommand.Parameters.AddWithValue("@pId_Inventario", miparametro);
+                  //  sqlCommand.Parameters.AddWithValue("@pId_Empleado", idEmpleado);
                     SqlDataReader leerDatos = sqlCommand.ExecuteReader();
                     dt.Load(leerDatos);
                     sqlCommand.Connection.Close();
@@ -79,6 +80,33 @@ namespace CapaNegocio
 
 
 
+        public DataTable MovimientoInventarioConsultar1(string miparametro)
+        {
+            CDMovimientoInventario objCDMovimientoInventario = new CDMovimientoInventario();
+            DataTable dt = new DataTable();
+
+            try
+            {
+                using (SqlCommand sqlCommand = new SqlCommand())
+                {
+                    sqlCommand.Connection = new InventarioConexion().dbconexion;
+                    sqlCommand.Connection.Open();
+                    sqlCommand.CommandText = "MovimientoInventarioConsultar";
+                    sqlCommand.CommandType = CommandType.StoredProcedure;
+                    sqlCommand.Parameters.AddWithValue("@pId_Inventario", miparametro);
+                    //  sqlCommand.Parameters.AddWithValue("@pId_Empleado", idEmpleado);
+                    SqlDataReader leerDatos = sqlCommand.ExecuteReader();
+                    dt.Load(leerDatos);
+                    sqlCommand.Connection.Close();
+                }
+            }
+            catch (Exception)
+            {
+                dt = null;
+            }
+
+            return dt;
+        }
 
 
         public DataTable MovimientoInventarioConsultarTodos()

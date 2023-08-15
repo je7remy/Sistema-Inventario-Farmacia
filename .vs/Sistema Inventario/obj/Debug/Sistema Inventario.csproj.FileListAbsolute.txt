@@ -307,3 +307,6 @@ C:\repos\Sistema-Inventario-Farmacia\Sistema Inventario\obj\Debug\Sistema_Invent
 C:\repos\Sistema-Inventario-Farmacia\Sistema Inventario\obj\Debug\Sistema_Inventario.FRProducto.resources
 C:\repos\Sistema-Inventario-Farmacia\Sistema Inventario\obj\Debug\RdlCompile.cache
 C:\repos\Sistema-Inventario-Farmacia\Sistema Inventario\obj\Debug\RdlCompile.compiled
+C:\C#\Sistema-Inventario-Farmacia\Sistema Inventario\obj\Debug\Sistema_Inventario.Consulta_Maestro_Empleado.resources
+C:\C#\Sistema-Inventario-Farmacia\Sistema Inventario\bin\Debug\DBInventario.mdf
+C:\C#\Sistema-Inventario-Farmacia\Sistema Inventario\bin\Debug\DBInventario_log.ldf
