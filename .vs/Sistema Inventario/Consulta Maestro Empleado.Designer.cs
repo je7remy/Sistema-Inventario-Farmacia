@@ -362,6 +362,7 @@ namespace Sistema_Inventario
             this.BImprimir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.toolTip1.SetToolTip(this.BImprimir, "Generar reporte correspondiente");
             this.BImprimir.UseVisualStyleBackColor = false;
+            this.BImprimir.Click += new System.EventHandler(this.BImprimir_Click);
             // 
             // button4
             // 

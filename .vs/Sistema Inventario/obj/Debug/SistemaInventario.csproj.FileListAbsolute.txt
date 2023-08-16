@@ -2,8 +2,6 @@ C:\C#\Sistema-Inventario-Farmacia\Sistema Inventario\bin\Debug\SqlServerTypes\x6
 C:\C#\Sistema-Inventario-Farmacia\Sistema Inventario\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
 C:\C#\Sistema-Inventario-Farmacia\Sistema Inventario\bin\Debug\SqlServerTypes\x86\msvcr120.dll
 C:\C#\Sistema-Inventario-Farmacia\Sistema Inventario\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
-C:\C#\Sistema-Inventario-Farmacia\Sistema Inventario\bin\Debug\DBInventario.mdf
-C:\C#\Sistema-Inventario-Farmacia\Sistema Inventario\bin\Debug\DBInventario_log.ldf
 C:\C#\Sistema-Inventario-Farmacia\Sistema Inventario\bin\Debug\Sistema Inventario.exe.config
 C:\C#\Sistema-Inventario-Farmacia\Sistema Inventario\bin\Debug\Sistema Inventario.exe
 C:\C#\Sistema-Inventario-Farmacia\Sistema Inventario\bin\Debug\Sistema Inventario.pdb
@@ -95,3 +93,5 @@ C:\C#\Sistema-Inventario-Farmacia\Sistema Inventario\obj\Debug\SistemaInventario
 C:\C#\Sistema-Inventario-Farmacia\Sistema Inventario\obj\Debug\SistemaInventario.csproj.CopyComplete
 C:\C#\Sistema-Inventario-Farmacia\Sistema Inventario\obj\Debug\Sistema Inventario.exe
 C:\C#\Sistema-Inventario-Farmacia\Sistema Inventario\obj\Debug\Sistema Inventario.pdb
+C:\C#\Sistema-Inventario-Farmacia\Sistema Inventario\bin\Debug\DBInventario.mdf
+C:\C#\Sistema-Inventario-Farmacia\Sistema Inventario\bin\Debug\DBInventario_log.ldf

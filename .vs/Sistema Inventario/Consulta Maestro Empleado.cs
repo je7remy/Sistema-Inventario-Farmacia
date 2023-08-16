@@ -298,6 +298,12 @@ namespace Sistema_Inventario
             }
         }
 
+        private void BImprimir_Click(object sender, EventArgs e)
+        {
+            FRMovimientoInventario reporte = new FRMovimientoInventario();
+            reporte.ShowDialog();
+        }
+
         private void BAceptar_Click(object sender, EventArgs e)
         {
             Close(); //Se cierra el formulario
