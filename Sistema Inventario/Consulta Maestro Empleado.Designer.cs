@@ -312,6 +312,7 @@ namespace Sistema_Inventario
             this.DGVDatos.Size = new System.Drawing.Size(1547, 255);
             this.DGVDatos.TabIndex = 2;
             this.DGVDatos.CurrentCellChanged += new System.EventHandler(this.DataGridViewDatos_CurrentCellChanged);
+            this.DGVDatos.SelectionChanged += new System.EventHandler(this.DGVDatos_SelectionChanged);
             // 
             // BSalir
             // 
@@ -361,6 +362,7 @@ namespace Sistema_Inventario
             this.BImprimir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.toolTip1.SetToolTip(this.BImprimir, "Generar reporte correspondiente");
             this.BImprimir.UseVisualStyleBackColor = false;
+            this.BImprimir.Click += new System.EventHandler(this.BImprimir_Click);
             // 
             // button4
             // 

@@ -33,6 +33,7 @@ namespace Sistema_Inventario
             valorparametro = "";
             vtieneparametro = 0;
             MostrarDatos(); //Método que llena el DataGrid
+          
             tbBuscar.Focus(); //El TextBox Buscar recibe el cursor
 
         }
@@ -173,7 +174,7 @@ namespace Sistema_Inventario
          
 
 
-            DataTable dt = objMovimiento.MovimientoInventarioConsultar(valorparametro);
+            DataTable dt = objMovimiento.MovimientoInventarioConsultar1(valorparametro);
 
             if (dt != null && dt.Rows.Count > 0)
             {
@@ -229,5 +230,7 @@ namespace Sistema_Inventario
                 //     MessageBox.Show("Ningún dato que mostrar!"); //Se muestra un mensaje de error
             }
         }
+
+       
     }
 }

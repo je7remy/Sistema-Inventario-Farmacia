@@ -18,7 +18,7 @@ namespace Sistema_Inventario
         public int vId_Producto = 0, vtieneparametro = 0, indice = 1;
         public string valorparametro = "", mensaje = "";
         CNProducto objproducto = new CNProducto();
-
+         CNCategoria objcategoria = new CNCategoria();
 
         public Consulta_Producto()
         {
@@ -216,6 +216,11 @@ Tbuscar.Focus(); // Se pasa el cursor al textbox
                 // MessageBox.Show("No se encontraron empleados.");
             }
         }
+
+
+
+
+
 
 
 

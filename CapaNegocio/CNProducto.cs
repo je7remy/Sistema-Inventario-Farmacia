@@ -56,23 +56,26 @@ namespace CapaNegocio
         public DataTable ProductoObtenerTodos()
         {
             string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;
-AttachDbFilename=C:\C#\Sistema-Inventario-Farmacia\CapaDatos\DBInventario.mdf;
-Integrated Security = True"; // Reemplaza esto con la cadena de conexión a tu base de datos
-            string consulta = "SELECT * FROM Producto"; // Reemplaza "tabla_empleados" con el nombre de tu tabla de empleados
+        AttachDbFilename=C:\C#\Sistema-Inventario-Farmacia\CapaDatos\DBInventario.mdf;
+        Integrated Security = True"; // Reemplaza esto con la cadena de conexión a tu base de datos
+        string consulta = "SELECT * FROM Producto"; // Reemplaza "tabla_empleados" con el nombre de tu tabla de empleados
 
-            DataTable dt = new DataTable();
+        DataTable dt = new DataTable();
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                SqlCommand command = new SqlCommand(consulta, connection);
-                connection.Open();
-                SqlDataReader reader = command.ExecuteReader();
+                    using (SqlConnection connection = new SqlConnection(connectionString))
+                    {
+                        SqlCommand command = new SqlCommand(consulta, connection);
+    connection.Open();
+                        SqlDataReader reader = command.ExecuteReader();
 
-                dt.Load(reader);
-            }
+    dt.Load(reader);
+                    }
 
-            return dt;
-        }
+return dt;
+                }
+
+
+   
 
 
         //Método utilizado para obtener un DataTable con todos los datos de la tabla 

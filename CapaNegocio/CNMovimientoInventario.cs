@@ -50,7 +50,68 @@ namespace CapaNegocio
         //Método utilizado para obtener un DataTable con todos los datos de la tabla 
         //correspondiente
 
-        public DataTable MovimientoInventarioConsultar(string miparametro)
+        //public DataTable MovimientoInventarioConsultar(string miparametro)
+        //{
+        //    CDMovimientoInventario objCDMovimientoInventario = new CDMovimientoInventario();
+        //    DataTable dt = new DataTable();
+
+        //    try
+        //    {
+        //        using (SqlCommand sqlCommand = new SqlCommand())
+        //        {
+        //            sqlCommand.Connection = new InventarioConexion().dbconexion;
+        //            sqlCommand.Connection.Open();
+        //            sqlCommand.CommandText = "MovimientoInventarioConsultar";
+        //            sqlCommand.CommandType = CommandType.StoredProcedure;
+        //            sqlCommand.Parameters.AddWithValue("@pId_Inventario", miparametro);
+        //            //  sqlCommand.Parameters.AddWithValue("@pId_Empleado", idEmpleado);
+        //            SqlDataReader leerDatos = sqlCommand.ExecuteReader();
+        //            dt.Load(leerDatos);
+        //            sqlCommand.Connection.Close();
+        //        }
+        //    }
+        //    catch (Exception)
+        //    {
+        //        dt = null;
+        //    }
+
+        //    return dt;
+        //  }
+        public DataTable MovimientoInventarioConsultar(string valorparametro)
+        {
+            // Utiliza el INNER JOIN para relacionar el ID del empleado con los movimientos de inventario
+            string query = @"
+                SELECT MI.Id_Inventario, MI.Id_Producto, P.Nombre AS NombreProducto, MI.Cantidad, MI.Tipo_De_Movimiento,
+                       MI.Id_Empleado, E.Nombre AS NombreEmpleado, MI.Fecha
+                FROM Movimiento_Inventario AS MI
+                INNER JOIN Producto AS P ON MI.Id_Producto = P.Id_Producto
+                INNER JOIN Empleado AS E ON MI.Id_Empleado = E.Id_Empleado
+                WHERE E.Id_Empleado LIKE @valorparametro
+                ORDER BY MI.Id_Inventario;
+            ";
+
+            // Ejecuta la consulta y devuelve el resultado en un DataTable
+            // Utiliza un objeto SqlCommand y SqlDataAdapter para llenar el DataTable
+            using (SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;
+        AttachDbFilename=C:\C#\Sistema-Inventario-Farmacia\CapaDatos\DBInventario.mdf;
+        Integrated Security = True"))
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@valorparametro", valorparametro);
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
+                    return dataTable;
+                }
+            }
+        }
+
+
+
+        public DataTable MovimientoInventarioConsultar1(string miparametro)
         {
             CDMovimientoInventario objCDMovimientoInventario = new CDMovimientoInventario();
             DataTable dt = new DataTable();
@@ -61,7 +122,7 @@ namespace CapaNegocio
                 {
                     sqlCommand.Connection = new InventarioConexion().dbconexion;
                     sqlCommand.Connection.Open();
-                    sqlCommand.CommandText = "Movimiento_InventarioConsultar";
+                    sqlCommand.CommandText = "MovimientoInventarioConsultar";
                     sqlCommand.CommandType = CommandType.StoredProcedure;
                     sqlCommand.Parameters.AddWithValue("@pId_Inventario", miparametro);
                     SqlDataReader leerDatos = sqlCommand.ExecuteReader();
@@ -77,8 +138,36 @@ namespace CapaNegocio
             return dt;
         }
 
+        //public DataTable MovimientoInventarioConsultar1(string miparametro)
+        //{
+        //    DataTable dt = new DataTable();
 
+        //    try
+        //    {
+        //        using (SqlConnection connection = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB;
+        //                AttachDbFilename = C:\C#\Sistema-Inventario-Farmacia\CapaDatos\DBInventario.mdf;
+        //Integrated Security = True"))
+        //        {
+        //            connection.Open();
+        //            using (SqlCommand sqlCommand = new SqlCommand("MovimientoInventarioConsultar", connection))
+        //            {
+        //                sqlCommand.CommandType = CommandType.StoredProcedure;
+        //                sqlCommand.Parameters.AddWithValue("@pId_Inventario", miparametro);
 
+        //                using (SqlDataReader leerDatos = sqlCommand.ExecuteReader())
+        //                {
+        //                    dt.Load(leerDatos);
+        //                }
+        //            }
+        //        }
+        //    }
+        //    catch (Exception)
+        //    {
+        //        dt = null;
+        //    }
+
+        //    return dt;
+        //}
 
 
         public DataTable MovimientoInventarioConsultarTodos()

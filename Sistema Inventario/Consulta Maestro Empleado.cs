@@ -21,6 +21,7 @@ namespace Sistema_Inventario
         public Consulta_Maestro_Empleado()
         {
             InitializeComponent();
+            DGVDatos.SelectionChanged += DGVDatos_SelectionChanged; // Asignar el evento aquí
         }
 
         private void Consulta_Empleado_FormClosing(object sender, FormClosingEventArgs e)
@@ -41,12 +42,22 @@ namespace Sistema_Inventario
             MostrarDatos(); //Método que llena el DataGrid
             MostrarDatos3();
             Tbuscar.Focus(); //El TextBox Buscar recibe el cursor
+            DGVDatos.SelectionChanged += DGVDatos_SelectionChanged;
         }
+
+
 
         private void DataGridViewDatos_CurrentCellChanged(object sender, EventArgs e)
         {
-            if (DGVDatos.CurrentRow != null) //Si el DataGridView no está vacío
-                indice = DGVDatos.CurrentRow.Index; //El valor de índice será la fila actua
+            //if (DGVDatos.CurrentRow != null) //Si el DataGridView no está vacío
+            //    indice = DGVDatos.CurrentRow.Index; //El valor de índice será la fila actua
+            if (DGVDatos.CurrentRow != null)
+            {
+                string valorparametro = "%" + DGVDatos.CurrentRow.Cells["Id_Empleado"].Value.ToString() + "%";
+                string idEmpleado = DGVDatos.CurrentRow.Cells["Id_Empleado"].Value.ToString();
+                DataTable dt = objMovimiento.MovimientoInventarioConsultar(idEmpleado);
+
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -184,13 +195,42 @@ namespace Sistema_Inventario
         }
 
 
-        private void MostrarDatos4() //4
+        //private void MostrarDatos4() //4
+        //{
+
+        //   // string valorparametro = tbBuscar.Text.Trim();
+
+
+
+        //    DataTable dt = objMovimiento.MovimientoInventarioConsultar(valorparametro);
+
+        //    if (dt != null && dt.Rows.Count > 0)
+        //    {
+        //        DGVdatos1.DataSource = dt;
+        //        DGVdatos1.Columns[0].Width = 80;
+        //        DGVdatos1.Columns[1].Width = 125;
+        //        DGVdatos1.Columns[2].Width = 200;
+        //        DGVdatos1.Columns[3].Width = 125;
+        //        DGVdatos1.Columns[4].Width = 125;
+
+
+        //    }
+        //    else
+        //    {
+        //        // MessageBox.Show("No se encontraron empleados.");
+        //    }
+        //    DGVdatos1.Refresh(); //Se refresca el DataGridView
+        //                        //   LCantMov.Text = Convert.ToString(DGVdatos.RowCount); //Se muestra la cantidad de datos
+        //    if (DGVdatos1.RowCount <= 0) //Si no se obtienen datos de retorno
+        //    {
+        //        //     MessageBox.Show("Ningún dato que mostrar!"); //Se muestra un mensaje de error
+        //    }
+        //}
+
+
+        private void MostrarDatos4(int idEmpleado)
         {
-
-           // string valorparametro = tbBuscar.Text.Trim();
-
-
-
+            string valorparametro = Tbuscar.Text.Trim();
             DataTable dt = objMovimiento.MovimientoInventarioConsultar(valorparametro);
 
             if (dt != null && dt.Rows.Count > 0)
@@ -201,18 +241,18 @@ namespace Sistema_Inventario
                 DGVdatos1.Columns[2].Width = 200;
                 DGVdatos1.Columns[3].Width = 125;
                 DGVdatos1.Columns[4].Width = 125;
-
-
+               
             }
             else
             {
-                // MessageBox.Show("No se encontraron empleados.");
+                // MessageBox.Show("No se encontraron movimientos.");
             }
-            DGVdatos1.Refresh(); //Se refresca el DataGridView
-                                //   LCantMov.Text = Convert.ToString(DGVdatos.RowCount); //Se muestra la cantidad de datos
-            if (DGVdatos1.RowCount <= 0) //Si no se obtienen datos de retorno
+
+            DGVdatos1.Refresh();
+
+            if (DGVdatos1.RowCount <= 0)
             {
-                //     MessageBox.Show("Ningún dato que mostrar!"); //Se muestra un mensaje de error
+                // MessageBox.Show("Ningún dato que mostrar.");
             }
         }
 
@@ -247,6 +287,21 @@ namespace Sistema_Inventario
             {
                 //     MessageBox.Show("Ningún dato que mostrar!"); //Se muestra un mensaje de error
             }
+        }
+
+        private void DGVDatos_SelectionChanged(object sender, EventArgs e)
+        {
+            if (DGVDatos.CurrentRow != null)
+            {
+                int idEmpleadoSeleccionado = Convert.ToInt32(DGVDatos.CurrentRow.Cells["Id_Empleado"].Value);
+                MostrarDatos4(idEmpleadoSeleccionado);
+            }
+        }
+
+        private void BImprimir_Click(object sender, EventArgs e)
+        {
+            FRMovimientoInventario reporte = new FRMovimientoInventario();
+            reporte.ShowDialog();
         }
 
         private void BAceptar_Click(object sender, EventArgs e)
